@@ -28,7 +28,6 @@ app.use(cors({
     credentials:true,//allows for cookies,authorization
     methods:['GET','POST','PUT','DELETE','OPTIONS']
 }))
-app.options("*", cors());
 //api routes
 app.use('/api/users',userRoutes)
 app.use('/api/products',productRoutes)
