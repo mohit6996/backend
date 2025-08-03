@@ -26,9 +26,9 @@ app.use(cors({
     origin:["http://localhost:5173","https://rabbit-umr4-lbzxhfheo-mohits-projects-c1808117.vercel.app"],
 
     credentials:true,//allows for cookies,authorization
-    methods:['GET','POST','PUT','DELETE']
+    methods:['GET','POST','PUT','DELETE','OPTIONS']
 }))
-
+app.options("*", cors());
 //api routes
 app.use('/api/users',userRoutes)
 app.use('/api/products',productRoutes)
