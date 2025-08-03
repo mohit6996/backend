@@ -25,12 +25,14 @@ app.use(express.json())
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://rabbit-umr4-638pu4jie-mohits-projects-c1808117.vercel.app",
-        "https://rabbit-umr4-lbzxhfheo-mohits-projects-c1808117.vercel.app"
+        "https://rabbit-umr4-638pu4jie-mohits-projects-c1808117.vercel.app/",
+        "https://rabbit-umr4-lbzxhfheo-mohits-projects-c1808117.vercel.app/"
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }))
+
+
 //api routes
 app.use('/api/users',userRoutes)
 app.use('/api/products',productRoutes)
