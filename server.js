@@ -22,15 +22,30 @@ const app=express()
 //midlerwares
 //jsonbodyparser come in to play when from data is transfered from front to back(client to server)
 app.use(express.json())
-app.use(cors({
-    origin: [
-        "http://localhost:5173",
-        "https://rabbit-umr4-638pu4jie-mohits-projects-c1808117.vercel.app",
-        "https://rabbit-umr4-lbzxhfheo-mohits-projects-c1808117.vercel.app"
-    ],
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
-}))
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://rabbit-umr4-638pu4zie-mohits-projects-c1808117.vercel.app",
+  "https://rabbit-umr4-lbzxhfheo-mohits-projects-c1808117.vercel.app",
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
+
+// Explicitly handle OPTIONS for all routes
+app.options("*", cors(corsOptions));
 //api routes
 app.use('/api/users',userRoutes)
 app.use('/api/products',productRoutes)
