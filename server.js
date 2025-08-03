@@ -23,7 +23,7 @@ const app=express()
 //jsonbodyparser come in to play when from data is transfered from front to back(client to server)
 app.use(express.json())
 app.use(cors({
-    origin:["http://localhost:5173","https://rabbit-zj1k.vercel.app"],
+    origin:["http://localhost:5173","https://rabbit-umr4-lbzxhfheo-mohits-projects-c1808117.vercel.app"],
 
     credentials:true,//allows for cookies,authorization
     methods:['GET','POST','PUT','DELETE']
