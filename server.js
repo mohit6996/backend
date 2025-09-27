@@ -21,17 +21,27 @@ const app=express()
 
 //midlerwares
 //jsonbodyparser come in to play when from data is transfered from front to back(client to server)
-app.use(express.json())
+
 const corsOptions = {
-  origin:"https://rabbit-umr4-638pu4zie-mohits-projects-c1808117.vercel.app",
+  origin: [
+    "https://rabbit-umr4-638pu4zie-mohits-projects-c1808117.vercel.app",
+    "https://rabbit-u5dt.vercel.app", // Add your backend domain too
+    "http://localhost:3000" // For local development
+  ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  optionsSuccessStatus: 200 // For legacy browser support
 };
 
+
+// Apply CORS before other middleware
 app.use(cors(corsOptions));
 
+
+
 app.options('*', cors());
+app.use(express.json())
 //api routes
 app.use('/api/users',userRoutes)
 app.use('/api/products',productRoutes)
