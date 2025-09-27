@@ -2,22 +2,62 @@ import express from "express"
 import mongoose from "mongoose"
 import  dotenv from "dotenv"
 import cors from "cors"
-import productRoutes from "./routes/productroutes.js"
-import userRoutes from "./routes/userRoutes.js"
-import cartRoutes from "./routes/cartRoutes.js"
-import checkoutRoutes from "./routes/checkoutRoutes.js"
-import orderRoutes from "./routes/orderRoutes.js"
-import uploadRoutes from"./routes/uploadRoutes.js"
-import subscribeRoutes from "./routes/subscribeRoutes.js"
-import adminUserRoutes from "./routes/adminUserRoutes.js"
-import adminProductRoutes from "./routes/adminProductRoutes.js"
-import adminOrderRoutes from"./routes/adminOrderroutes.js"
-import subscribeeRoutes from "./routes/subscribeRoutes.js"
+// import productRoutes from "./routes/productroutes.js"
+// import userRoutes from "./routes/userRoutes.js"
+// import cartRoutes from "./routes/cartRoutes.js"
+// import checkoutRoutes from "./routes/checkoutRoutes.js"
+// import orderRoutes from "./routes/orderRoutes.js"
+// import uploadRoutes from"./routes/uploadRoutes.js"
+// import subscribeRoutes from "./routes/subscribeRoutes.js"
+// import adminUserRoutes from "./routes/adminUserRoutes.js"
+// import adminProductRoutes from "./routes/adminProductRoutes.js"
+// import adminOrderRoutes from"./routes/adminOrderroutes.js"
+// import subscribeeRoutes from "./routes/subscribeRoutes.js"
 dotenv.config()
 
 const PORT=process.env.PORT
 const MONGO_URL=process.env.MONGO_URL
 const app=express()
+import express from "express"
+import mongoose from "mongoose"
+import dotenv from "dotenv"
+import cors from "cors"
+
+// ❌ REMOVE ALL THESE IMPORTS - they're causing the crash
+// import productRoutes from "./routes/productroutes.js"
+// import userRoutes from "./routes/userRoutes.js"
+// import cartRoutes from "./routes/cartRoutes.js"
+// import checkoutRoutes from "./routes/checkoutRoutes.js"
+// import orderRoutes from "./routes/orderRoutes.js"
+// import uploadRoutes from "./routes/uploadRoutes.js"
+// import subscribeRoutes from "./routes/subscribeRoutes.js"
+// import adminUserRoutes from "./routes/adminUserRoutes.js"
+// import adminProductRoutes from "./routes/adminProductRoutes.js"
+// import adminOrderRoutes from "./routes/adminOrderroutes.js"
+// import subscribeeRoutes from "./routes/subscribeRoutes.js"
+
+
+
+
+
+=
+
+// Middleware
+app.use(cors());
+app.use(express.json())
+
+// ✅ Simple test route - no external routes imported
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'Server is working without route imports!' });
+});
+
+// ✅ Add a products test route directly
+app.get('/api/products/getallproducts', (req, res) => {
+  res.json({ 
+    message: 'Products API is working!',
+    products: [] 
+  });
+});
 
 //midlerwares
 //jsonbodyparser come in to play when from data is transfered from front to back(client to server)
