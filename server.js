@@ -40,7 +40,7 @@ app.use(cors(corsOptions));
 
 
 
-app.options('*', cors());
+
 app.use(express.json())
 //api routes
 app.use('/api/users',userRoutes)
