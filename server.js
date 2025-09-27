@@ -43,17 +43,17 @@ app.use(cors());
 
 app.use(express.json())
 //api routes
-app.use('/api/users',userRoutes)
-app.use('/api/products',productRoutes)
-app.use('/api/cart',cartRoutes)
-app.use('/api/checkout',checkoutRoutes)
-app.use('/api/order',orderRoutes)
-app.use('/api/upload',uploadRoutes)
-app.use('/api/subscribe',subscribeRoutes)
-app.use('/api/admin/user',adminUserRoutes)
-app.use('/api/admin/product',adminProductRoutes)
-app.use('/api/admin/order',adminOrderRoutes)
-app.use("/email",subscribeeRoutes)
+// app.use('/api/users',userRoutes)
+// app.use('/api/products',productRoutes)
+// app.use('/api/cart',cartRoutes)
+// app.use('/api/checkout',checkoutRoutes)
+// app.use('/api/order',orderRoutes)
+// app.use('/api/upload',uploadRoutes)
+// app.use('/api/subscribe',subscribeRoutes)
+// app.use('/api/admin/user',adminUserRoutes)
+// app.use('/api/admin/product',adminProductRoutes)
+// app.use('/api/admin/order',adminOrderRoutes)
+// app.use("/email",subscribeeRoutes)
 
 
 
