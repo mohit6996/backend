@@ -31,7 +31,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-
+app.options('*', cors());
 //api routes
 app.use('/api/users',userRoutes)
 app.use('/api/products',productRoutes)
