@@ -18,10 +18,7 @@ dotenv.config()
 const PORT=process.env.PORT
 const MONGO_URL=process.env.MONGO_URL
 const app=express()
-import express from "express"
-import mongoose from "mongoose"
-import dotenv from "dotenv"
-import cors from "cors"
+
 
 // ❌ REMOVE ALL THESE IMPORTS - they're causing the crash
 // import productRoutes from "./routes/productroutes.js"
